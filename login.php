@@ -138,8 +138,8 @@
   </head>
   <body>
     <div class="navbar">
-      <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
-      <a class="active" href="login.html"
+      <a href="index.php"><i class="fa fa-fw fa-home"></i> Home</a>
+      <a class="active" href="login.php"
         ><i class="fa fa-fw fa-user"></i> Login</a
       >
     </div>

@@ -167,16 +167,16 @@
                     <td>Quantity</td>
                     <td>Payment ID</td>
                     <td>
-                        <a href="updateOrder.html"><button class="Update_button" type="button">Update Order</button></a>
+                        <a href="updateOrder.php"><button class="Update_button" type="button">Update Order</button></a>
                     </td>
                     <td>
-                        <a href="deleteOrder.html"><button class="Delete_button" type="button">Delete Order</button></a>
+                        <a href="deleteOrder.php"><button class="Delete_button" type="button">Delete Order</button></a>
 
                     </td>
                 </tr>
             </tbody>
         </table>
-        <a href="newOrder.html" target="_blank"><button class="New_button" type="button">New Order</button></a>
+        <a href="newOrder.php" target="_blank"><button class="New_button" type="button">New Order</button></a>
 
     </div>
     <p>Delete this tag after the work is done. bhai ooper jo table bana hua hai wo schema ko dekh kr banaya iss mei bss
@@ -216,12 +216,12 @@
                     <td>Order Date</td>
                     <td>Tax</td>
                     <td>
-                        <a href="updateOrder.html" target="_blank"><button class="Update_button" type="button"
+                        <a href="updateOrder.php" target="_blank"><button class="Update_button" type="button"
                                 ondblclick="link">Update
                                 Payment </a>
                     </td>
                     <td>
-                        <a href="deletePayments.html" target="_blank"><button class="Delete_button" type="button"
+                        <a href="deletePayments.php" target="_blank"><button class="Delete_button" type="button"
                                 ondblclick="link">Delete
                                 Payment</button></a>
                     </td>
@@ -229,7 +229,7 @@
             </tbody>
         </table>
 
-        <a href="newPayments.html" target="_blank"><button class="New_button" type="button" ondblclick="link">New
+        <a href="newPayments.php" target="_blank"><button class="New_button" type="button" ondblclick="link">New
                 Payment</button></a>
 
 

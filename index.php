@@ -12,7 +12,7 @@
 
     <div class="navbar">
       <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
-      <a href="login.html"><i class="fa fa-fw fa-user"></i> Login</a>
+      <a href="login.php"><i class="fa fa-fw fa-user"></i> Login</a>
     </div>
   </body>
 </html>
