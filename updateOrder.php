@@ -1,3 +1,50 @@
+<?php
+
+
+   require "conn.php";
+
+   if(isset($_GET['upd_id'])) {
+
+    $id = $_GET['upd_id'];
+
+    $data = $conn->query("SELECT * FROM ORDERS WHERE ORDERID = '$id'");
+
+  $rows = $data->fetch(PDO::FETCH_OBJ);
+
+
+
+  if(isset($_POST['submit'])){
+    if( !empty($_POST['orderName']) && !empty($_POST['orderDate']) && !empty($_POST['quantity']) )
+    {
+
+        
+        $orderName = $_POST['orderName'];
+        $orderDate = $_POST['orderDate'];
+        $quantity = $_POST['quantity'];
+        
+
+        ECHO $orderDate;
+        $update =  $conn->prepare("UPDATE ORDERS SET ORDERNAME=?, ORDERDATE=?, QTY=? WHERE ORDERID = '$id'");
+
+        $update->execute(array(
+             
+             $orderName,
+             $orderDate,
+             $quantity
+             
+        ));
+
+        header("location: customer.php");
+    }
+    else{
+        header("location: customer.php");
+
+    }
+} 
+} 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,27 +124,27 @@
     </div>
         <br><br>
     <div>
-    <form action="" class="form" >
-        <label for="orderid" class="row">Order Id:</label>
+    <form action="updateOrder.php?upd_id=<?php echo $id; ?>" method="POST" class="form" >
+        <!-- <label for="orderid" class="row">Order Id:</label>
         <input class="input" type="text" name="orderid" id="orderid" placeholder="Enter the Orderid">
-        <br>
+        <br> -->
 
         <label for="orderName" class="row">Order Name:</label>
-        <input class="input"  type="text" name="orderName" id="orderName" placeholder="Enter the Order Name">
+        <input class="input"  type="text" name="orderName" id="orderName" value="<?php echo $rows->ORDERNAME; ?>">
         <br>
 
         <label for="orderDate" class="row">Order Date:</label>
-        <input class="input"  type="text" name="orderDate" id="orderDate" placeholder="Enter the Order Date">
+        <input class="input"  type="text" name="orderDate" id="orderDate" value="<?php echo $rows->ORDERDATE; ?>">
         <br>
 
         <label for="quantity" class="row">Quantity:</label>
-        <input class="input"  type="text" name="quantity" id="quantity" placeholder="Enter the Quantity">
+        <input class="input"  type="number" name="quantity" id="quantity" value="<?php echo $rows->QTY; ?>">
         <br>
 
-        <label for="paymentId" class="row">Payment Id:</label>
-        <input class="input"  type="text" name="paymentId" id="paymentId" placeholder="Enter the Payment Id">
-        <br>
-        <input  id ="button" type="submit" value="Update Order" class="New_button">
+        <!-- <label for="custid" class="row">Customer Id:</label>
+        <input class="input"  type="text" name="custid" id="custid" placeholder="Enter the customer Id">
+        <br> -->
+        <input  id ="button" type="submit" name="submit" value="Update Order" class="New_button">
     </form>
     </div>
 </body>

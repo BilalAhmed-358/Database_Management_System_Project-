@@ -1,3 +1,50 @@
+<?php
+
+
+   require "conn.php";
+
+   if(isset($_GET['upd_id'])) {
+
+    $id = $_GET['upd_id'];
+
+    $data = $conn->query("SELECT * FROM PAYMENTS WHERE PAYMENTID = '$id'");
+
+  $rows = $data->fetch(PDO::FETCH_OBJ);
+
+
+
+  if(isset($_POST['submit'])){
+    if( !empty($_POST['amount']) && !empty($_POST['paymentType']) && !empty($_POST['tax']) )
+    {
+
+        
+        $amount = $_POST['amount'];
+        $paymentType = $_POST['paymentType'];
+        $tax = $_POST['tax'];
+        
+echo $amount;
+        $update =  $conn->prepare("UPDATE PAYMENTS SET AMOUNT=?, PAYMENTTYPE=?, TAX=? WHERE PAYMENTID = '$id'");
+
+        $update->execute(array(
+             
+             $amount,
+             $paymentType,
+             $tax
+             
+        ));
+
+        header("location: customer.php");
+    }
+    else{
+        
+        header("location: customer.php");
+
+    }
+} 
+} 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,23 +124,25 @@
     </div>
         <br><br>
         <div>
-    <form action="" class="form" >
-        <label for="paymentId" class="row">Payment Id:</label>
+    <form action="updatePayment.php?upd_id=<?php echo $id; ?>" method="POST" class="form" >
+        <!-- <label for="paymentId" class="row">Payment Id:</label>
         <input class="input" type="text" name="paymentId" id="paymentId" placeholder="Enter the Payment Id">
-        <br>
+        <br> -->
 
         <label for="amount" class="row">Amount:</label>
-        <input class="input"  type="text" name="amount" id="amount" placeholder="Enter the Amount">
+        <input class="input"  type="number" name="amount" id="amount" value="<?php echo $rows->AMOUNT; ?>">
         <br>
 
         <label for="paymentType" class="row">Payment Type:</label>
-        <input class="input"  type="text" name="paymentType" id="paymentType" placeholder="Enter the payment type">
+        <input class="input"  type="text" name="paymentType" id="paymentType" value="<?php echo $rows->PAYMENTTYPE; ?>">
         <br>
 
         <label for="tax" class="row">Tax:</label>
-        <input class="input"  type="text" name="tax" id="tax" placeholder="Enter the Quantity">
+        <input class="input"  type="number" name="tax" id="tax" value="<?php echo $rows->TAX; ?>">
         <br>
-        <input  id ="button" type="submit" value="Update Payment" class="New_button">
+
+
+        <input  id ="button" type="submit" name="submit" value="Update Payment" class="New_button">
     </form>
     </div>
 </body>

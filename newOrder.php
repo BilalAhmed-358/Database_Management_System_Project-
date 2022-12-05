@@ -77,7 +77,7 @@
     </div>
         <br><br>
     <div>
-    <form action="" class="form" >
+    <form action="insert_order.php" method="POST" class="form" >
         <label for="orderid" class="row">Order Id:</label>
         <input class="input" type="text" name="orderid" id="orderid" placeholder="Enter the Orderid">
         <br>
@@ -94,10 +94,10 @@
         <input class="input"  type="text" name="quantity" id="quantity" placeholder="Enter the Quantity">
         <br>
 
-        <label for="paymentId" class="row">Payment Id:</label>
-        <input class="input"  type="text" name="paymentId" id="paymentId" placeholder="Enter the Payment Id">
+        <label for="customerId" class="row">Customer Id:</label>
+        <input class="input"  type="text" name="customerId" id="customerId" placeholder="Enter the Customer Id">
         <br>
-        <input  id ="button" type="submit" value="Create new Order" class="New_button">
+        <input  id ="button_action" type="submit" name="submit" value="submit" class="btn btn-default">
     </form>
     </div>
 </body>

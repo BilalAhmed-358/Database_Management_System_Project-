@@ -1,3 +1,15 @@
+
+<?php
+
+require "conn.php";
+
+
+$data = $conn->query("SELECT * FROM ORDERS");
+$data1 = $conn->query("SELECT * FROM PAYMENTS");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -149,7 +161,7 @@
                         Quantity
                     </th>
                     <th>
-                        Payment Id
+                        Customer Id
                     </th>
                     <th>
                         Update Entry
@@ -160,23 +172,24 @@
                 </tr>
             </thead>
             <tbody>
+            <?php while($rows_order = $data->fetch(PDO::FETCH_OBJ)): ?>
                 <tr>
-                    <td>order id</td>
-                    <td>order name</td>
-                    <td>Order date</td>
-                    <td>Quantity</td>
-                    <td>Payment ID</td>
+                    <td><?php echo $rows_order->ORDERID   ;?></td>
+                    <td><?php echo $rows_order->ORDERNAME   ;?></td>
+                    <td><?php echo $rows_order->ORDERDATE   ;?></td>
+                    <td><?php echo $rows_order->QTY   ;?></td>
+                    <td><?php echo $rows_order->CUSTID   ;?></td>
                     <td>
-                        <a href="updateOrder.php"><button class="Update_button" type="button">Update Order</button></a>
+                        <a href="updateOrder.php?upd_id=<?php echo $rows_order->ORDERID; ?>"><button class="Update_button" type="button">Update Order</button></a>
                     </td>
                     <td>
-                        <a href="deleteOrder.php"><button class="Delete_button" type="button">Delete Order</button></a>
-
+                        <a href="delete_order.php?del_id=<?php echo $rows_order->ORDERID; ?>"><button class="Delete_button" type="button">Delete Order</button></a>
                     </td>
                 </tr>
+                <?php endwhile; ?>  
             </tbody>
         </table>
-        <a href="newOrder.php" target="_blank"><button class="New_button" type="button">New Order</button></a>
+        <a href="newOrder.php" target="_blank"><button class="New_button" type="button">Add New Order</button></a>
 
     </div>
     <p>Delete this tag after the work is done. bhai ooper jo table bana hua hai wo schema ko dekh kr banaya iss mei bss
@@ -202,6 +215,9 @@
                         Tax
                     </th>
                     <th>
+                        Order ID
+                    </th>
+                    <th>
                         Update Entry
                     </th>
                     <th>
@@ -210,27 +226,25 @@
                 </tr>
             </thead>
             <tbody>
+            <?php while($rows_payments = $data1->fetch(PDO::FETCH_OBJ)): ?>
                 <tr>
-                    <td>Payment id</td>
-                    <td>Amount</td>
-                    <td>Order Date</td>
-                    <td>Tax</td>
+                    <td><?php echo $rows_payments->PAYMENTID  ;?></td>
+                    <td><?php echo $rows_payments->AMOUNT  ;?></td>
+                    <td><?php echo $rows_payments->PAYMENTTYPE  ;?></td>
+                    <td><?php echo $rows_payments->TAX  ;?></td>
+                    <td><?php echo $rows_payments->ORDERID  ;?></td>
                     <td>
-                        <a href="updateOrder.php" target="_blank"><button class="Update_button" type="button"
-                                ondblclick="link">Update
-                                Payment </a>
+                    <a href="updatePayment.php?upd_id=<?php echo $rows_payments->PAYMENTID; ?>"><button class="Update_button" type="button">Update Order</button></a>
                     </td>
                     <td>
-                        <a href="deletePayments.php" target="_blank"><button class="Delete_button" type="button"
-                                ondblclick="link">Delete
-                                Payment</button></a>
+                    <a href="delete_payment.php?del_id=<?php echo $rows_payments->PAYMENTID; ?>"><button class="Delete_button" type="button">Delete Payment</button></a>
                     </td>
                 </tr>
+                <?php endwhile; ?>
             </tbody>
         </table>
 
-        <a href="newPayments.php" target="_blank"><button class="New_button" type="button" ondblclick="link">New
-                Payment</button></a>
+        <a href="newPayment.php" target="_blank"><button class="New_button" type="button">Add New Payment</button></a>
 
 
     </div>
