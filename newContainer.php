@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Payment</title>
+    <title>New Container</title>
     <style>
         body {
             background-color: #f8f8f8;
@@ -73,32 +73,19 @@
 
 <body>
     <div class="header">
-        <p class="logo">New Payment</p>
+        <p class="logo">New Container</p>
     </div>
         <br><br>
     <div>
-    <form action="insert_payment.php" method="POST" class="form" >
-        <label for="paymentId" class="row">Payment Id:</label>
-        <input class="input" type="text" name="paymentId" id="paymentId" placeholder="Enter the Payment Id">
+    <form action="insert_order.php" method="POST" class="form" >
+        <label for="containerid" class="row">Container Id:</label>
+        <input class="input" type="text" name="containerid" id="containerid" placeholder="Enter the containerid">
         <br>
 
-        <label for="amount" class="row">Amount:</label>
-        <input class="input"  type="text" name="amount" id="amount" placeholder="Enter the Amount">
+        <label for="goods_name" class="row">Good's Name:</label>
+        <input class="input"  type="text" name="goods_name" id="goods_name" placeholder="Enter the Good's Name">
         <br>
-
-        <label for="paymentType" class="row">Payment Type:</label>
-        <input class="input"  type="text" name="paymentType" id="paymentType" placeholder="Enter the payment type">
-        <br>
-
-        <label for="tax" class="row">Tax:</label>
-        <input class="input"  type="text" name="tax" id="tax" placeholder="Enter the Quantity">
-        <br>
-
-        <label for="orderid" class="row">Order ID:</label>
-        <input class="input"  type="text" name="orderid" id="orderid" placeholder="Enter the Order ID">
-        <br>
-
-        <input  class="New_button" id ="button" type="submit" name="submit" value="Create new Payment" class="btn btn-default">
+        <input class="New_button" id ="button_action" type="submit" name="submit" value="submit" class="btn btn-default">
     </form>
     </div>
 </body>
