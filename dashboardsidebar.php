@@ -167,6 +167,41 @@
 
     <br><br>
     <div class="customer">
+        <h2>Ports</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Port ID
+                    </th>
+                    <th>
+                        Port Name
+                    </th>
+                    <th>
+                        Delete Entry
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Port Id
+                </td>
+                <td>
+                  Port Name
+                </td>
+                <td>
+                <a href=""><button class="Delete_button" type="button">Delete</button></a>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+        <a href="newPort.php" target="_blank"><button class="New_button" type="button">Add Port</button></a>
+
+    </div>
+    <br>
+    <br>
+    <div class="customer">
         <h2>Ports and ships</h2>
 
         <form action="">
@@ -251,7 +286,7 @@
               </tr>
             </tbody>
         </table>
-        <a href="" target="_blank"><button class="New_button" type="button">Add ship</button></a>
+        <a href="newShip.php" target="_blank"><button class="New_button" type="button">Add ship</button></a>
 
     </div>
 
@@ -294,7 +329,7 @@
               </tr>
             </tbody>
         </table>
-        <a href="" target="_blank"><button class="New_button" type="button">Add container</button></a>
+        <a href="newContainer.php" target="_blank"><button class="New_button" type="button">Add container</button></a>
 
     </div>
   </body>
