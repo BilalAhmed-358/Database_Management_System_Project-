@@ -77,7 +77,7 @@
     </div>
         <br><br>
     <div>
-    <form action="insert_order.php" method="POST" class="form" >
+    <form action="insert_ship.php" method="POST" class="form" >
         <label for="shipid" class="row">Ship Id:</label>
         <input class="input" type="text" name="shipid" id="shipid" placeholder="Enter the Ship Id">
         <br>
@@ -90,33 +90,29 @@
         <input class="input"  type="text" name="LOCATION" id="LOCATION" placeholder="Enter the Location">
         <br>
 
-        <label for="dockTime" class="row">Dock Time</label>
+        <!-- <label for="dockTime" class="row">Dock Time</label>
         <input class="input"  type="text" name="dockTime" id="dockTime" placeholder="Enter the Docking time">
-        <br>
+        <br> -->
         
         <label for="noOfContainers" class="row">Number of containers</label>
         <input class="input"  type="text" name="noOfContainers" id="noOfContainers" placeholder="Enter the Number of containers">
         <br>
 
         <label for="WEIGHT" class="row">Weight</label>
-        <input class="input"  type="text" name="WEIGHT" id="WEIGHT" placeholder="Enter the Weight">
+        <input class="input"  type="text" name="WEIGHT" id="WEIGHT" placeholder="Enter the Weight in tonnes">
         <br>
 
         <label for="refuelDuration" class="row">Refuel Duration</label>
-        <input class="input"  type="text" name="refuelDuration" id="refuelDuration" placeholder="Enter the Refuel Duration">
+        <input class="input"  type="text" name="refuelDuration" id="refuelDuration" placeholder="Enter the Refuel Duration in minutes">
         <br>
 
         <label for="pricePerHour" class="row">Price per hour</label>
         <input class="input"  type="text" name="pricePerHour" id="pricePerHour" placeholder="Enter the price per hour">
         <br>
 
-        <label for="arrivalDate" class="row">Arrival Date</label>
+        <!-- <label for="arrivalDate" class="row">Arrival Date</label>
         <input class="input"  type="text" name="arrivalDate" id="arrivalDate" placeholder="Enter the arrival date">
-        <br>
-
-        <label for="containerId" class="row">Container Id</label>
-        <input class="input"  type="text" name="containerId" id="containerId" placeholder="Enter the container Id">
-        <br>
+        <br> -->
 
         <label for="portId" class="row">Port Id</label>
         <input class="input"  type="text" name="portId" id="portId" placeholder="Enter the Port Id">

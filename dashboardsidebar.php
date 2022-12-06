@@ -1,3 +1,16 @@
+<?php
+
+require "conn.php";
+
+
+$data = $conn->query("SELECT * FROM CUSTOMERS");
+$data1 =$conn->query("SELECT * FROM PORT");
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -146,20 +159,22 @@
                 </tr>
             </thead>
             <tbody>
+            <?php while($rows_cust = $data->fetch(PDO::FETCH_OBJ)): ?>
               <tr>
                 <td>
-                  Customer Id data
+                <?php echo $rows_cust->CUSTID   ;?>
                 </td>
                 <td>
-                  Customer name data
+                <?php echo $rows_cust->CUSTNAME   ;?>
                 </td>
                 <td>
-                  Customer address data
+                <?php echo $rows_cust->CUSTADDRESS   ;?>
                 </td>
                 <td>
-                <a href=""><button class="Delete_button" type="button">Delete Customer</button></a>
+                <a href="delete_cust.php?del_id=<?php echo $rows_cust->CUSTID; ?>"><button class="Delete_button" type="button">DELETE</button></a>
                 </td>
               </tr>
+              <?php endwhile; ?>
             </tbody>
         </table>
 
@@ -183,17 +198,19 @@
                 </tr>
             </thead>
             <tbody>
+            <?php while($rows_port = $data1->fetch(PDO::FETCH_OBJ)): ?>
               <tr>
                 <td>
-                  Port Id
+                <?php echo $rows_port->PORTID   ;?>
                 </td>
                 <td>
-                  Port Name
+                <?php echo $rows_port->PORTNAME   ;?>
                 </td>
                 <td>
-                <a href=""><button class="Delete_button" type="button">Delete</button></a>
+                <a href="delete_port.php?del_id=<?php echo $rows_port->PORTID; ?>"><button class="Delete_button" type="button">DELETE</button></a>
                 </td>
               </tr>
+              <?php endwhile; ?>
             </tbody>
         </table>
         <a href="newPort.php" target="_blank"><button class="New_button" type="button">Add Port</button></a>
@@ -202,14 +219,14 @@
     <br>
     <br>
     <div class="customer">
-        <h2>Ports and ships</h2>
+        <h2>Ships</h2>
 
-        <form action="">
+        <form action="" method="GET">
           <label for="portid" class="row">Search Port ID to get data of ships docked on that port:</label>
-          <input class="input" type="text" name="portid" id="portid" placeholder="Enter port ID">
+          <input class="form-control" type="text" name="portid" id="portid" required value="<?php if(isset($_GET['portid'])){echo $_GET['portid']; } ?>" placeholder="Enter port ID">
           <input  id ="button_action" type="submit" name="submit" value="Search for ships" class="btn btn-default">
-
         </form>
+
         <table class="table">
             <thead>
                 <tr>
@@ -249,41 +266,47 @@
                 </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  Ship Id data
-                </td>
-                <td>
-                  Route data
-                </td>
-                <td>
-                  Docktime data
-                </td>
-                <td>
-                  Number of containers data
-                </td>
-                <td>
-                  weight data
-                </td>
-                <td>
-                  refuel duration data
-                </td>
-                <td>
-                  price per hour data
-                </td>
-                <td>
-                  arrival data 
-                </td>
-                <td>
-                  container id data
-                </td>
-                <td>
-                  port id data
-                </td>
-                <td>
-                <a href=""><button class="Delete_button" type="button">Delete</button></a>
-                </td>
-              </tr>
+            <?php 
+                $con = mysqli_connect("localhost","root","","freight");
+                      if(isset($_GET['portid']))
+                       {
+                        $portid = $_GET['portid'];
+                        $query = "SELECT * FROM SHIPS WHERE PORTID=$portid ";
+                        $query_run = mysqli_query($con, $query);
+                        if(mysqli_num_rows($query_run) > 0)
+                        {
+                          foreach($query_run as $items)
+                          {
+                             ?>
+                             <tr>
+                                <td><?= $items['SHIPID']; ?></td>
+                                <td><?= $items['ROUTE']; ?></td>
+                                <td><?= $items['LOCATION']; ?></td>
+                                <td><?= $items['DOCKTIME']; ?></td>
+                                <td><?= $items['NOOFCONTAINERS']; ?></td>
+                                <td><?= $items['WEIGHT']; ?></td>
+                                <td><?= $items['REFUELDURATION']; ?></td>
+                                <td><?= $items['PRICEPERHOUR']; ?></td>
+                                <td><?= $items['ARRIVAL_DATE']; ?></td>
+                                <td><?= $items['PORTID']; ?></td>
+                                <td>
+                                   <a href="delete_ship.php?del_id=<?= $items['SHIPID']; ?>"><button class="Delete_button" type="button">DELETE</button></a>
+                          </td>
+                             </tr>
+                             <?php
+                          }
+                        }
+                        else
+                        {
+                            ?>
+                            <tr>
+                                <td colspan="10">No Record Found</td>
+                            </tr>
+                            <?php
+                        }
+                       }
+                   ?>
+
             </tbody>
         </table>
         <a href="newShip.php" target="_blank"><button class="New_button" type="button">Add ship</button></a>
@@ -293,14 +316,14 @@
     <br>
     <br>
     <div class="customer">
-        <h2>Ships and containers</h2>
+        <h2>Containers</h2>
 
-        <form action="">
+        <form action="" method="GET">
           <label for="shipid" class="row">Search Ship Id to see container data:</label>
-          <input class="input" type="text" name="shipid" id="shipid" placeholder="Enter ship ID">
-          <input  id ="button_action" type="submit" name="submit" value="Search for containers" class="btn btn-default">
-
+          <input class="form-control" type="text" name="shipid" id="shipid" required value="<?php if(isset($_GET['shipid'])){echo $_GET['shipid']; } ?>" placeholder="Enter ship ID">
+          <input  id ="button_action" type="submit" name="submit"  class="btn btn-primart">
         </form>
+
         <table class="table">
             <thead>
                 <tr>
@@ -316,17 +339,39 @@
                 </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  container Id data
-                </td>
-                <td>
-                  Goods name data
-                </td>
-                <td>
-                <a href=""><button class="Delete_button" type="button">Delete</button></a>
-                </td>
-              </tr>
+            <?php 
+                $con = mysqli_connect("localhost","root","","freight");
+                      if(isset($_GET['shipid']))
+                       {
+                        $shipid = $_GET['shipid'];
+                        $query = "SELECT * FROM CONTAINERS WHERE SHIPID=$shipid ";
+                        $query_run = mysqli_query($con, $query);
+                        if(mysqli_num_rows($query_run) > 0)
+                        {
+                          foreach($query_run as $items)
+                          {
+                             ?>
+                             <tr>
+                                <td><?= $items['CONTAINERID']; ?></td>
+                                <td><?= $items['GOODS_NAME']; ?></td>
+                                <td>
+                                <a href="delete_container.php?del_id=<?= $items['CONTAINERID']; ?>"><button class="Delete_button" type="button">DELETE</button></a>
+                                </td>
+                             </tr>
+                             <?php
+                          }
+                        }
+                        else
+                        {
+                            ?>
+                            <tr>
+                                <td colspan="2">No Record Found</td>
+                            </tr>
+                            <?php
+                        }
+                       }
+                   ?>
+
             </tbody>
         </table>
         <a href="newContainer.php" target="_blank"><button class="New_button" type="button">Add container</button></a>

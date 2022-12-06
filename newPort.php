@@ -77,7 +77,7 @@
     </div>
         <br><br>
     <div>
-    <form action="insert_order.php" method="POST" class="form" >
+    <form action="insert_port.php" method="POST" class="form" >
         <label for="portId" class="row">Port Id:</label>
         <input class="input" type="text" name="portId" id="portId" placeholder="Enter the Port Id">
         <br>

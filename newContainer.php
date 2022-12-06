@@ -77,13 +77,17 @@
     </div>
         <br><br>
     <div>
-    <form action="insert_order.php" method="POST" class="form" >
+    <form action="insert_container.php" method="POST" class="form" >
         <label for="containerid" class="row">Container Id:</label>
         <input class="input" type="text" name="containerid" id="containerid" placeholder="Enter the containerid">
         <br>
 
         <label for="goods_name" class="row">Good's Name:</label>
         <input class="input"  type="text" name="goods_name" id="goods_name" placeholder="Enter the Good's Name">
+        <br>
+
+        <label for="shipid" class="row">Ship ID:</label>
+        <input class="input"  type="text" name="shipid" id="shipid" placeholder="Enter the new Ship ID">
         <br>
         <input class="New_button" id ="button_action" type="submit" name="submit" value="submit" class="btn btn-default">
     </form>

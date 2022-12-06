@@ -14,22 +14,22 @@
 
 
   if(isset($_POST['submit'])){
-    if( !empty($_POST['orderName']) && !empty($_POST['orderDate']) && !empty($_POST['quantity']) )
+    if( !empty($_POST['orderName'])  && !empty($_POST['quantity']) )
     {
 
         
         $orderName = $_POST['orderName'];
-        $orderDate = $_POST['orderDate'];
+        // $orderDate = $_POST['orderDate'];
         $quantity = $_POST['quantity'];
         
 
-        ECHO $orderDate;
-        $update =  $conn->prepare("UPDATE ORDERS SET ORDERNAME=?, ORDERDATE=?, QTY=? WHERE ORDERID = '$id'");
+        
+        $update =  $conn->prepare("UPDATE ORDERS SET ORDERNAME=?, ORDERDATE=CURDATE(), QTY=? WHERE ORDERID = '$id'");
 
         $update->execute(array(
              
              $orderName,
-             $orderDate,
+            //  $orderDate,
              $quantity
              
         ));
@@ -133,9 +133,9 @@
         <input class="input"  type="text" name="orderName" id="orderName" value="<?php echo $rows->ORDERNAME; ?>">
         <br>
 
-        <label for="orderDate" class="row">Order Date:</label>
+        <!-- <label for="orderDate" class="row">Order Date:</label>
         <input class="input"  type="text" name="orderDate" id="orderDate" value="<?php echo $rows->ORDERDATE; ?>">
-        <br>
+        <br> -->
 
         <label for="quantity" class="row">Quantity:</label>
         <input class="input"  type="number" name="quantity" id="quantity" value="<?php echo $rows->QTY; ?>">
