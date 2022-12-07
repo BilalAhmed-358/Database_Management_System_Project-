@@ -74,6 +74,21 @@
             margin: 20px;
             min-width: 100px;
         }
+
+        .New_button_ {
+            background-color: #ff6600;
+            border: none;
+            color: white;
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 13px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 20px;
+            min-width: 100px;
+        }
     </style>
 </head>
 
@@ -96,6 +111,9 @@
 
             <input class="New_button" id="button_action" type="submit" name="submit" value="Sign In"
                 class="btn btn-default">
-        </form>
+            </form>
+            <a href="customerSignup.php" target="_blank">
+            <input class="New_button_" id="button_action" type="submit" name="submit" value="Sign Up"
+                class="btn btn-default"></a>
     </div>
 </body>
