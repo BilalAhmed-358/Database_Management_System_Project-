@@ -3,9 +3,6 @@
 <createdBy>Dell</createdBy>
 <createdTime>2022-11-26 15:44:41 UTC</createdTime>
 <ownerDesignName>project schema </ownerDesignName>
-<engineerTo>
-<item key="570FD7AE-FD54-C2CF-EB15-9A35FCED7007" value="true"/>
-</engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
 <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
@@ -19,9 +16,6 @@
 <createdBy>Dell</createdBy>
 <createdTime>2022-11-26 16:31:46 UTC</createdTime>
 <ownerDesignName>project schema </ownerDesignName>
-<engineerTo>
-<item key="570FD7AE-FD54-C2CF-EB15-9A35FCED7007" value="true"/>
-</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
@@ -31,9 +25,49 @@
 <createdBy>Dell</createdBy>
 <createdTime>2022-11-26 16:31:57 UTC</createdTime>
 <ownerDesignName>project schema </ownerDesignName>
-<engineerTo>
-<item key="570FD7AE-FD54-C2CF-EB15-9A35FCED7007" value="true"/>
-</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ShipID" id="88B03178-08A3-7AB5-DAE7-8613FF8DF6E8">
+<createdBy>Dell</createdBy>
+<createdTime>2022-12-07 20:11:28 UTC</createdTime>
+<generatorID>3D3C60B5-A2CC-82C0-333F-9C38B19A2068</generatorID>
+<ownerDesignName>project schema </ownerDesignName>
+<referedAttribute>0BB75636-9375-B1A3-AFAE-36E61F0C0780</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PortID1" id="C3B51D42-E4F9-4DC7-C944-F04F4A735C87">
+<createdBy>Dell</createdBy>
+<createdTime>2022-12-07 20:11:28 UTC</createdTime>
+<generatorID>3D3C60B5-A2CC-82C0-333F-9C38B19A2068</generatorID>
+<ownerDesignName>project schema </ownerDesignName>
+<referedAttribute>AFAFE7E2-D217-8DCA-6A46-B79934B47036</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="AdminID" id="839C13F4-15E1-E5A7-718A-8D3307CFAC3E">
+<createdBy>Dell</createdBy>
+<createdTime>2022-12-07 20:11:28 UTC</createdTime>
+<generatorID>3D3C60B5-A2CC-82C0-333F-9C38B19A2068</generatorID>
+<ownerDesignName>project schema </ownerDesignName>
+<referedAttribute>2DB14D4A-4F01-1D6A-D924-C65C4FDA3A9A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PORTID" id="FD12358D-A844-4287-E8F3-6173131DEFB0">
+<createdBy>Dell</createdBy>
+<createdTime>2022-12-07 20:14:27 UTC</createdTime>
+<ownerDesignName>project schema </ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -46,9 +80,6 @@
 <createdBy>Dell</createdBy>
 <createdTime>2022-11-26 16:31:55 UTC</createdTime>
 <ownerDesignName>project schema </ownerDesignName>
-<engineerTo>
-<item key="570FD7AE-FD54-C2CF-EB15-9A35FCED7007" value="true"/>
-</engineerTo>
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>57077E99-BE28-82C7-3A9C-F018C97A3A4B</attributeRef>

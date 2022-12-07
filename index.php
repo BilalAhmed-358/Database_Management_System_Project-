@@ -1,18 +1,23 @@
+<?php
+require 'config.php';
+if(!empty($_SESSION["id"])){
+  $id = $_SESSION["id"];
+  $result = mysqli_query($connection, "SELECT * FROM customers WHERE custid = $id");
+  $row = mysqli_fetch_assoc($result);
+}
+else{
+  header("Location: customerSignin.php");
+}
+
+?>
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <title>Index</title>
   </head>
   <body>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-
-    <div class="navbar">
-      <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
-      <a href="login.php"><i class="fa fa-fw fa-user"></i> Login</a>
-    </div>
+    <h1>Welcome <?php echo $row["name"]; ?></h1>
+    <a href="logout.php">Logout</a>
   </body>
 </html>

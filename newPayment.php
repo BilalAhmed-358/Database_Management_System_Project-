@@ -91,7 +91,7 @@
         <br>
 
         <label for="tax" class="row">Tax:</label>
-        <input class="input"  type="text" name="tax" id="tax" placeholder="Enter the Quantity">
+        <input class="input"  type="text" name="tax" id="tax" placeholder="Enter the TAX %">
         <br>
 
         <label for="orderid" class="row">Order ID:</label>
@@ -106,7 +106,7 @@
         <p class="logo">New Credit Info</p>
     </div>
     <br><br>
-    <form action="insert_payment.php" method="POST" class="form" >
+    <form action="insert_card.php" method="POST" class="form" >
     <label for="cardNo" class="row">Card Number:</label>
     <input class="input" type="text" name="cardNo" id="cardNo" placeholder="Enter card number">
     <br>
@@ -120,11 +120,11 @@
     <br>
 
     <label for="cardType" class="row">Card Type:</label>
-    <input class="input"  type="text" name="cardType" id="cardType" placeholder="Enter the card type">
+    <input class="input"  type="text" name="cardType" id="cardType" placeholder="Enter the card type visa/mastercard">
     <br>
 
-    <label for="paytmentId" class="row">Payment ID:</label>
-    <input class="input"  type="text" name="paytmentId" id="paytmentId" placeholder="Enter the payment Id">
+    <label for="paymentId" class="row">Payment ID:</label>
+    <input class="input"  type="text" name="paymentId" id="paymentId" placeholder="Enter the payment Id">
     <br>
 
     <input  class="New_button" id ="button" type="submit" name="submit" value="Create new Credit" class="btn btn-default">

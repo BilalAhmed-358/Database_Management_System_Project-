@@ -18,6 +18,10 @@ $data1 = $conn->query("SELECT * FROM PAYMENTS");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer</title>
+
+    <link rel="stylesheet" href="mystyle.css">
+
+
     <style>
         body {
             background-color: #f8f8f8;
@@ -138,7 +142,12 @@ $data1 = $conn->query("SELECT * FROM PAYMENTS");
 
 <body>
     <div class="header">
-        <p class="logo">Customer Info</p>
+        <p href="#default" class="logo">Customer Portal</p>
+        <div class="header-right">
+        <a class="active" href="logout.php">LOGOUT</a>
+        <!-- <a href="#contact">Contact</a>
+        <a href="#about">About</a> -->
+    </div>
     </div>
 
     <br>
@@ -192,9 +201,6 @@ $data1 = $conn->query("SELECT * FROM PAYMENTS");
         <a href="newOrder.php" target="_blank"><button class="New_button" type="button">Add New Order</button></a>
 
     </div>
-    <p>Delete this tag after the work is done. bhai ooper jo table bana hua hai wo schema ko dekh kr banaya iss mei bss
-        tumhy database sy query run krni hai or data display kr dena hai jaisy iss video mei kya hai iss bandy ny
-        https://www.youtube.com/watch?v=pdsfCLtNqus</p>
     <br>
     <br>
     <div class="payments">

@@ -1,3 +1,34 @@
+<?php
+require 'config.php';
+if(!empty($_SESSION["id"])){
+  header("Location: index.php");
+}
+if(isset($_POST["submit"])){
+  $custId = $_POST["custId"];
+  $custPassword = $_POST["custPassword"];
+  $custName = $_POST["custName"];
+  $custAddress = $_POST["custAddress"];
+  
+  $duplicate = mysqli_query($connection, "SELECT * FROM CUSTOMERS WHERE CUSTID = '$custId' ");
+  if(mysqli_num_rows($duplicate) > 0){
+    echo
+    "<script> alert('CUSTOMER ID HAS ALREADY BEEN TAKEN'); </script>";
+  }
+  else{
+    
+      $query = "INSERT INTO CUSTOMERS VALUES('$custId','$custName','$custAddress','$custPassword')";
+      mysqli_query($connection, $query);
+      echo
+      "<script> alert('Registration Successful'); </script>";
+      header("Location: customerSignin.php");
+
+    
+    
+  }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,7 +114,7 @@
     </div>
     <br><br>
     <div class="form">
-        <form action="insert_ship.php" method="POST">
+        <form action="" method="POST">
             <br>
             <label for="custId" class="row">Customer Id</label><br>
             <input class="input" type="text" name="custId" id="custId" placeholder="Enter Customer Id">

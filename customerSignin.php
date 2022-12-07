@@ -1,3 +1,35 @@
+<?php
+require 'config.php';
+if(!empty($_SESSION["id"])){
+  header("Location: index.php");
+}
+if(isset($_POST["submit"])){
+  $custId = $_POST["custId"];
+  $custPassword = $_POST["custPassword"];
+
+  $result = mysqli_query($connection, "SELECT * FROM CUSTOMERS WHERE CUSTID = '$custId' ");
+  $row = mysqli_fetch_assoc($result);
+  if(mysqli_num_rows($result) > 0){
+    if($custPassword == $row['custpassword']){
+      $_SESSION["login"] = true;
+      $_SESSION["id"] = $row["custid"];
+      echo
+      "<script> alert('LOGIN SUCCESSFUL'); </script>";
+      header("Location: customer.php");
+      
+    }
+    else{
+      echo
+      "<script> alert('Wrong Password'); </script>";
+    }
+  }
+  else{
+    echo
+    "<script> alert('User Not Registered'); </script>";
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,7 +130,7 @@
     </div>
     <br><br>
     <div class="form">
-        <form action="insert_ship.php" method="POST">
+        <form action="" method="POST">
             <br>
             <label for="custId" class="row">Customer Id</label><br>
             <input class="input" type="text" name="custId" id="custId" placeholder="Enter Customer Id">
@@ -110,7 +142,7 @@
             <br>
 
             <input class="New_button" id="button_action" type="submit" name="submit" value="Sign In"
-                class="btn btn-default">
+                class="btn btn-default"> 
             </form>
             <a href="customerSignup.php" target="_blank">
             <input class="New_button_" id="button_action" type="submit" name="submit" value="Sign Up"

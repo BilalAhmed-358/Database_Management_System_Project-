@@ -18,6 +18,9 @@ $data1 =$conn->query("SELECT * FROM PORT");
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Panel</title>
+
+  <link rel="stylesheet" href="mystyle.css">
+
   <style>
     body 
     {
@@ -135,7 +138,12 @@ $data1 =$conn->query("SELECT * FROM PORT");
 </head>
   <body>
     <div class="header">
-        <p class="logo">Admin panel</p>
+        <p href="#default" class="logo">Admin portal</p>
+        <div class="header-right">
+        <a class="active" href="homepage.php">LOGOUT</a>
+        <!-- <a href="#contact">Contact</a>
+        <a href="#about">About</a> -->
+    </div>
     </div>
     <br>
     <br>

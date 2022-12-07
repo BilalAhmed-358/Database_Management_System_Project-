@@ -3,9 +3,6 @@
 <createdBy>Dell</createdBy>
 <createdTime>2022-11-26 15:43:04 UTC</createdTime>
 <ownerDesignName>project schema </ownerDesignName>
-<engineerTo>
-<item key="570FD7AE-FD54-C2CF-EB15-9A35FCED7007" value="true"/>
-</engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
 <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
@@ -19,9 +16,6 @@
 <createdBy>Dell</createdBy>
 <createdTime>2022-11-26 15:48:09 UTC</createdTime>
 <ownerDesignName>project schema </ownerDesignName>
-<engineerTo>
-<item key="570FD7AE-FD54-C2CF-EB15-9A35FCED7007" value="true"/>
-</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
@@ -31,9 +25,6 @@
 <createdBy>Dell</createdBy>
 <createdTime>2022-11-26 15:48:18 UTC</createdTime>
 <ownerDesignName>project schema </ownerDesignName>
-<engineerTo>
-<item key="570FD7AE-FD54-C2CF-EB15-9A35FCED7007" value="true"/>
-</engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -44,9 +35,6 @@
 <createdBy>Dell</createdBy>
 <createdTime>2022-11-26 15:51:50 UTC</createdTime>
 <ownerDesignName>project schema </ownerDesignName>
-<engineerTo>
-<item key="570FD7AE-FD54-C2CF-EB15-9A35FCED7007" value="true"/>
-</engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -57,9 +45,6 @@
 <createdBy>Dell</createdBy>
 <createdTime>2022-11-26 15:52:11 UTC</createdTime>
 <ownerDesignName>project schema </ownerDesignName>
-<engineerTo>
-<item key="570FD7AE-FD54-C2CF-EB15-9A35FCED7007" value="true"/>
-</engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -71,10 +56,17 @@
 <createdTime>2022-11-26 16:34:05 UTC</createdTime>
 <generatorID>13B5EA54-48A8-F6C9-6747-6D85CF9F62D6</generatorID>
 <ownerDesignName>project schema </ownerDesignName>
-<engineerTo>
-<item key="570FD7AE-FD54-C2CF-EB15-9A35FCED7007" value="true"/>
-</engineerTo>
 <referedAttribute>02C352EE-C5B4-FAA4-42F6-7BFDD967664A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ORDERID_2" id="2FFE162A-BE85-E249-C700-1D3C54A2FE75">
+<createdBy>Dell</createdBy>
+<createdTime>2022-12-07 20:13:54 UTC</createdTime>
+<ownerDesignName>project schema </ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
@@ -86,9 +78,6 @@
 <createdBy>Dell</createdBy>
 <createdTime>2022-11-26 15:48:16 UTC</createdTime>
 <ownerDesignName>project schema </ownerDesignName>
-<engineerTo>
-<item key="570FD7AE-FD54-C2CF-EB15-9A35FCED7007" value="true"/>
-</engineerTo>
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>4E91FF91-5A61-67DB-04BF-DC10170D63D8</attributeRef>

@@ -1,3 +1,34 @@
+<?php
+require 'config.php';
+
+if(isset($_POST["submit"])){
+  $adminId = $_POST["adminId"];
+  $adminPassword = $_POST["adminPassword"];
+
+  $result = mysqli_query($connection, "SELECT * FROM ADMINS WHERE ADMINID = '$adminId' ");
+  $row = mysqli_fetch_assoc($result);
+  if(mysqli_num_rows($result) > 0){
+    if($adminPassword == $row['ADMINPASSWORD']){
+        
+      $_SESSION["login"] = true;
+      $_SESSION["id"] = $row["ADMINID"];
+      echo
+      "<script> alert('LOGIN SUCCESSFUL'); </script>";
+      header("Location: dashboardsidebar.php");
+      
+    }
+    else{
+      echo
+      "<script> alert('WRONG PASSWORD'); </script>";
+    }
+  }
+  else{
+    echo
+    "<script> alert('ADMIN NOT REGISTERED'); </script>";
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,7 +114,7 @@
     </div>
     <br><br>
     <div class="form">
-        <form action="insert_ship.php" method="POST">
+        <form action="" method="POST">
             <br>
             <label for="adminId" class="row">Admin Id</label><br>
             <input class="input" type="text" name="adminId" id="adminId" placeholder="Enter Admin Id">
