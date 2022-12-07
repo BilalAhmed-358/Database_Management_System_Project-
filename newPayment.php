@@ -101,4 +101,32 @@
         <input  class="New_button" id ="button" type="submit" name="submit" value="Create new Payment" class="btn btn-default">
     </form>
     </div>
+    <br><br>
+    <div class="header">
+        <p class="logo">New Credit Info</p>
+    </div>
+    <br><br>
+    <form action="insert_payment.php" method="POST" class="form" >
+    <label for="cardNo" class="row">Card Number:</label>
+    <input class="input" type="text" name="cardNo" id="cardNo" placeholder="Enter card number">
+    <br>
+
+    <label for="threeDigitSecurityCode" class="row">Three digit Security Code:</label>
+    <input class="input"  type="text" name="threeDigitSecurityCode" id="threeDigitSecurityCode" placeholder="Enter the three digit security code">
+    <br>
+
+    <label for="expiryDate" class="row">Expiry Date:</label>
+    <input class="input"  type="text" name="expiryDate" id="expiryDate" placeholder="Enter the expiry date">
+    <br>
+
+    <label for="cardType" class="row">Card Type:</label>
+    <input class="input"  type="text" name="cardType" id="cardType" placeholder="Enter the card type">
+    <br>
+
+    <label for="paytmentId" class="row">Payment ID:</label>
+    <input class="input"  type="text" name="paytmentId" id="paytmentId" placeholder="Enter the payment Id">
+    <br>
+
+    <input  class="New_button" id ="button" type="submit" name="submit" value="Create new Credit" class="btn btn-default">
+    </form>
 </body>
