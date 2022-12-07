@@ -86,9 +86,9 @@
         <input class="input"  type="text" name="orderName" id="orderName" placeholder="Enter the Order Name">
         <br>
 
-        <label for="orderDate" class="row">Order Date:</label>
+        <!-- <label for="orderDate" class="row">Order Date:</label>
         <input class="input"  type="text" name="orderDate" id="orderDate" placeholder="Enter the Order Date">
-        <br>
+        <br> -->
 
         <label for="quantity" class="row">Quantity:</label>
         <input class="input"  type="text" name="quantity" id="quantity" placeholder="Enter the Quantity">
