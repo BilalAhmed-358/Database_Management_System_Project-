@@ -10,7 +10,7 @@
             $portName = $_POST['portName'];
 
 
-            $insert =  $conn->prepare("insert into PORTS(PORTID,PORTNAME) VALUES(?,?)");
+            $insert =  $conn->prepare("insert into PORT(PORTID,PORTNAME) VALUES(?,?)");
 
             $insert->execute(array(
                  $portId,

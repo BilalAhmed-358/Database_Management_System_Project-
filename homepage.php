@@ -68,9 +68,9 @@
 
     
     <div class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0 ms-auto  justify-content-end">
-        <a href="AdminSignin.php" class="btn btn-primary py-md-2 px-md-5 me-3 rounded-pill justify-content-end ">Admin
+        <a href="AdminSignin.php" target="_blank" class="btn btn-primary py-md-2 px-md-5 me-3 rounded-pill justify-content-end ">Admin
             LogIn</a>
-        <a href="customerSignin.php" class="btn btn-secondary py-md-2 px-md-5 rounded-pill">Customer LogIn</a>
+        <a href="customerSignin.php" target="_blank" class="btn btn-secondary py-md-2 px-md-5 rounded-pill">Customer LogIn</a>
     </div></nav>
     <!-- Navbar End -->
 
