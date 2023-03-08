@@ -5,20 +5,20 @@ A full stack "port management system" project made for our Database and Manageme
 ## Tech Stack
 
 ### Front End:
-a. HTML
-b. CSS
-c. Bootstrap
-d. Javascript
+1. HTML
+2. CSS
+3. Bootstrap
+4. Javascript
 
 The front-end of the project would be developed using HTML, CSS, and Bootstrap, which would ensure a visually appealing and responsive user interface. 
 
 ### Back End:
-a. Php
+1. Php
 
 The back-end of the project would be developed using PHP, which would be responsible f or processing data and performing server-side operations. 
 
 ### Database:
-a. MySQL
+1. MySQL
 
 The project would use MySQL as the database management system, which would ensure efficient storage and retrieval of data.
 
