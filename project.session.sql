@@ -87,3 +87,13 @@ ALTER TABLE CONTAINERS
 ADD CONSTRAINT fk_5
 FOREIGN KEY (SHIPID)
 REFERENCES SHIPS(SHIPID);
+
+create or replace view orders_payments AS
+select payments.paymentid,orders.orderid from 
+payments inner join orders ON
+payments.orderid=orders.orderid;
+
+create or replace view payment_credit AS
+select payments.paymentid,credit.cardno,payments.amount from 
+payments inner join credit ON
+payments.paymentid=credit.paymentid;
