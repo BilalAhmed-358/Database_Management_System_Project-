@@ -10,7 +10,7 @@ if(isset($_POST["submit"])){
   $result = mysqli_query($connection, "SELECT * FROM CUSTOMERS WHERE CUSTID = '$custId' ");
   $row = mysqli_fetch_assoc($result);
   if(mysqli_num_rows($result) > 0){
-    if($custPassword == $row['custpassword']){
+    if($custPassword == $row['CUSTPASSWORD']){
       $_SESSION["login"] = true;
       $_SESSION["id"] = $row["custid"];
       echo
